@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Новости</title>
+</head>
+<body>
+    <h1>Последние новости</h1>
+    <ul>
+        {% for article in latest_articles %}
+            <li>{{ article.pub_date }} - {{ article.title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
