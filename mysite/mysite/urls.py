@@ -16,8 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.urls import path, include
+
+from mysite.news.views import register, login_view, logout_view, add_favorite, remove_favorite, favorite_articles
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/', include('news.urls')),
+    path('register/', register, name='register'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('', include('django.contrib.auth.urls')),
+    path('article/<int:article_id>/add_favorite/', add_favorite, name='add_favorite'),
+    path('article/<int:article_id>/remove_favorite/', remove_favorite, name='remove_favorite'),
+    path('favorites/', favorite_articles, name='favorite_articles'),
 ]

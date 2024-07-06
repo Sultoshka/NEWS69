@@ -12,4 +12,4 @@ class NewsAdmin(admin.ModelAdmin):
     list_filter = ('category', 'created_at')
 
 admin.site.register(NewsCategory, NewsCategoryAdmin)
-admin.site.register(News, NewsAdmin)g
+admin.site.register(News, NewsAdmin)
